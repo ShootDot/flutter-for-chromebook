@@ -1,10 +1,10 @@
 # Installing Flutter in Chromebook 
 
  1. Enable Linux on your Chromebook:
--   Open the "Settings" app and go to the "Linux (Beta)" section.
--   Click on "Turn On" to enable Linux.
--   Follow the on-screen instructions to set up Linux and create a username and password.
-2. Install the necessary dependencies:
+   -   Open the "Settings" app and go to the "Advanced" section.
+   -   Click on "Developers" and turn on "Linux development environment."
+   -   Follow the on-screen instructions to set up Linux and create a username and password.
+   2. Install the necessary dependencies:
 -   Open the Linux terminal and enter the following commands:
 ```bash
 sudo apt update
