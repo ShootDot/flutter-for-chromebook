@@ -64,7 +64,7 @@ flutter doctor
 - This will check if Flutter is installed correctly and if there are any additional dependencies or configurations needed.
 
 
-# Installing Visual Studio Code
+### Installing Visual Studio Code
 Open the terminal and run the following commands to install Visual Studio Code IDE:
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -81,7 +81,7 @@ sudo apt-get install code
 ```
 Note: You can copy the whole code block and paste it in the terminal using the hotkey `CTRL + SHIFT + V`.
 
-# Installing Chrome browser
+### Installing Chrome browser
 Open the terminal and run the following commands to install Chrome browser for development purposes:
 ```bash
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/googlechrome-linux-keyring.gpg
