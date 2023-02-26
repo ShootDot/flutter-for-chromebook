@@ -39,21 +39,14 @@ tar xf flutter_linux_3.7.5-stable.tar.xz
 ```
 - This will create a directory called `flutter`.
 #### Set up the Flutter environment:
-- Open the Linux terminal and run the following command to get the export path:
+- Open the Linux terminal and run the following command to add flutter to the path:
 ```bash
-echo export PATH=\"\$PATH:`pwd`/flutter/bin\"
+echo 'export PATH="$PATH:$HOME/flutter/bin"' >> "$HOME/.bashrc"
 ```
 - Copy the output of the above command.
-- Run the following command to open `~/.bashrc` file.
-```bash
-nano ~/.bashrc
-```
-- Scroll to the last line by pressing the down arrow key.
-- Add a new line and paste the output which you copied earlier. Use the hotkey `CTRL + SHIFT + V` to paste.
-- Press `CTRL + X` and then press `y` and then press `enter` key to save the file.
 - Run the following command to update the terminal environments:
 ```bash
-source ~/.bashrc
+source "$HOME/.bashrc"
 ```
 - Reopen the terminal to finish the updation of environmental variables.
 #### Verify the installation:
