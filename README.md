@@ -4,6 +4,22 @@
    -   Open the "Settings" app and go to the "Advanced" section.
    -   Click on "Developers" and turn on "Linux development environment."
    -   Follow the on-screen instructions to set up Linux and create a username and password.
+## Automatic Installation
+To install Flutter on your Chromebook automatically, follow these steps:
+
+1.  Open the Terminal app on your Chromebook.
+    
+2.  Copy and paste the following command into the Terminal and press Enter:
+```bash
+curl -sSL https://raw.githubusercontent.com/ShootDot/flutter-for-chromebook/main/install_flutter.sh | bash
+```
+3.  This command will download the installation script from GitHub and run it on your Chromebook.
+    
+4.  The script will download and install all necessary dependencies, including the latest version of Flutter.
+    
+5.  Once the installation is complete, the script will add the Flutter bin directory to your system's path.
+
+## Manual Installation
  #### Install the necessary dependencies:
 -   Open the Linux terminal and enter the following commands:
 ```bash
