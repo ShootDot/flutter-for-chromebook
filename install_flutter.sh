@@ -29,21 +29,30 @@ if ! command -v code > /dev/null 2>&1; then
   rm microsoft.gpg
 fi
 
-# Fetch the latest Flutter release version from the releases_linux.json file
-echo "Fetching latest Flutter release version..."
-LATEST_RELEASE_VERSION=$(curl -s https://storage.googleapis.com/flutter_infra_release/releases/releases_linux.json | jq -r '.releases[0].version')
+#Check if Flutter is installed, and install it if necessary
+echo "Checking for Flutter..."
+if ! command -v flutter > /dev/null 2>&1; then
+  # Fetch the latest Flutter release version from the releases_linux.json file
+  echo "Fetching latest Flutter release version..."
+  LATEST_RELEASE_VERSION=$(curl -s https://storage.googleapis.com/flutter_infra_release/releases/releases_linux.json | jq -r '.releases[0].version')
 
-# Define the installation directory
-INSTALL_DIR="$HOME/flutter"
+  # Define the installation directory
+  INSTALL_DIR="$HOME/flutter"
 
-# Download and extract the latest Flutter release
-echo "Downloading and extracting Flutter..."
-curl -L "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_$LATEST_RELEASE_VERSION-stable.tar.xz" | tar -C "$HOME" -xJ
+  # Download and extract the latest Flutter release
+  echo "Downloading and extracting Flutter..."
+  curl -L "https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_$LATEST_RELEASE_VERSION-stable.tar.xz" | tar -C "$HOME" -xJ
 
-# Add the Flutter binary path to PATH
-echo "Adding Flutter to PATH..."
-echo 'export PATH="$PATH:$HOME/flutter/bin"' >> "$HOME/.bashrc"
-source "$HOME/.bashrc"
+  # Add the Flutter binary path to PATH
+  echo "Adding Flutter to PATH..."
+  echo 'export PATH="$PATH:$HOME/flutter/bin"' >> "$HOME/.bashrc"
+  source "$HOME/.bashrc"
+fi
+
+# Install the Flutter and Dart plugins for VS Code
+echo "Installing the Flutter and Dart plugins for VS Code..."
+code --install-extension dart-code.dart-code --force
+code --install-extension dart-code.flutter --force
 
 # Verify the installation
 echo "Verifying the installation..."
