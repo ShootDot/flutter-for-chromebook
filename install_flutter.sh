@@ -14,6 +14,7 @@ if ! command -v google-chrome > /dev/null 2>&1; then
   echo "Installing Google Chrome..."
   curl https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -o google-chrome-stable_current_amd64.deb
   sudo dpkg -i google-chrome-stable_current_amd64.deb
+  sudo apt --fix-broken install -y
   rm google-chrome-stable_current_amd64.deb
 fi
 
@@ -26,6 +27,7 @@ if ! command -v code > /dev/null 2>&1; then
   sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
   sudo apt-get update
   sudo apt-get install -y code
+  sudo apt --fix-broken install -y
   rm microsoft.gpg
 fi
 
