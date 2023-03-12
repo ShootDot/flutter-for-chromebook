@@ -1,3 +1,10 @@
+# Running flutter in codespace
+```bash
+flutter create <project_name>
+cd <project_name>
+flutter run  -d web-server --web-hostname=0.0.0.0 --web-port=3000
+```
+
 # Installing Flutter in Chromebook 
 
  #### Enable Linux on your Chromebook:
